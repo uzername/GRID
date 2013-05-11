@@ -8,6 +8,7 @@ package grid;
 import PetriObj.PetriNet;
 import PetriObj.PetriSim;
 import java.util.ArrayList;
+import grid_servithors.Dat_Printer;
 
 /**
  *
@@ -43,17 +44,17 @@ public class PlanSim extends PetriSim {
 
      for(UserSim u: userList)
 
-     {System.out.println("Спільні позиції ОГО: "+"\n"
+     {Dat_Printer.println("Спільні позиції ОГО: "+"\n"
        + u.getNet().getListP()[12].getName()+" = ");
          u.getNet().getListP()[12] = pNet.getListP()[10];
         
-                  System.out.println(pNet.getListP()[10].getName()+"\n");
+                  Dat_Printer.println(pNet.getListP()[10].getName()+"\n");
      }
      int     j=0;
      for(UserSim u: userList)
      {
       for (TaskSim task: u.getTaskList())
-      { System.out.println("Спільні позиції: "+"\n"
+      { Dat_Printer.println("Спільні позиції: "+"\n"
                             +task.getNet().getListP()[6].getName() +" = ");
           task.getNet().getListP()[6] = pNet.getListP()[4] ;
           
