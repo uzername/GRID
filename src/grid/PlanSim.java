@@ -44,17 +44,17 @@ public class PlanSim extends PetriSim {
 
      for(UserSim u: userList)
 
-     {Dat_Printer.println("Спільні позиції ОГО: "+"\n"
+     {Dat_Printer.getDat_Printer().println("Спільні позиції ОГО: "+"\n"
        + u.getNet().getListP()[12].getName()+" = ");
          u.getNet().getListP()[12] = pNet.getListP()[10];
         
-                  Dat_Printer.println(pNet.getListP()[10].getName()+"\n");
+                  Dat_Printer.getDat_Printer().println(pNet.getListP()[10].getName()+"\n");
      }
      int     j=0;
      for(UserSim u: userList)
      {
       for (TaskSim task: u.getTaskList())
-      { Dat_Printer.println("Спільні позиції: "+"\n"
+      { Dat_Printer.getDat_Printer().println("Спільні позиції: "+"\n"
                             +task.getNet().getListP()[6].getName() +" = ");
           task.getNet().getListP()[6] = pNet.getListP()[4] ;
           

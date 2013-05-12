@@ -45,39 +45,39 @@ public class UserSim extends PetriSim {
        MIPS=100;
        state =true;
       
-       Dat_Printer.println("Спільні позиції: "+"\n"
+       Dat_Printer.getDat_Printer().println("Спільні позиції: "+"\n"
      + taskList.get(0).getNet().getListP()[1].getName() +" = ");
        taskList.get(0).getNet().getListP()[1]  = pNet.getListP()[7];
       
-                              Dat_Printer.println(pNet.getListP()[7].getName()+"\n");
-      Dat_Printer.println(
+                              Dat_Printer.getDat_Printer().println(pNet.getListP()[7].getName()+"\n");
+      Dat_Printer.getDat_Printer().println(
        taskList.get(0).getNet().getListP()[2].getName()+ " = ");
        taskList.get(0).getNet().getListP()[2]  = pNet.getListP()[11];
       
-                              Dat_Printer.println(pNet.getListP()[11].getName()+"\n");
-       Dat_Printer.println(
+                              Dat_Printer.getDat_Printer().println(pNet.getListP()[11].getName()+"\n");
+       Dat_Printer.getDat_Printer().println(
        taskList.get(0).getNet().getListP()[13].getName()+ " = ");
        taskList.get(0).getNet().getListP()[13]  = pNet.getListP()[9];
        
-                               Dat_Printer.println(pNet.getListP()[9].getName()+"\n");
+                               Dat_Printer.getDat_Printer().println(pNet.getListP()[9].getName()+"\n");
        if(buffer>1)
            for(int j=0;j<buffer-1;j++)
            {
-               Dat_Printer.println(
+               Dat_Printer.getDat_Printer().println(
                taskList.get(1).getNet().getListP()[1].getName()+" = ");
                taskList.get(1).getNet().getListP()[1]  = pNet.getListP()[16+4*j];
               
-                                      Dat_Printer.println(pNet.getListP()[16+4*j].getName()+"\n");
-               Dat_Printer.println(
+                                      Dat_Printer.getDat_Printer().println(pNet.getListP()[16+4*j].getName()+"\n");
+               Dat_Printer.getDat_Printer().println(
                taskList.get(1).getNet().getListP()[2].getName()+" = ");
                taskList.get(1).getNet().getListP()[2]  = pNet.getListP()[19+4*j];
               
-                                      Dat_Printer.println(pNet.getListP()[19+4*j].getName()+"\n");
-               Dat_Printer.println(
+                                      Dat_Printer.getDat_Printer().println(pNet.getListP()[19+4*j].getName()+"\n");
+               Dat_Printer.getDat_Printer().println(
                taskList.get(1).getNet().getListP()[13].getName()+" = ");
                taskList.get(1).getNet().getListP()[13]  = pNet.getListP()[17+4*j];
              
-                                       Dat_Printer.println(pNet.getListP()[17+4*j].getName()+"\n");
+                                       Dat_Printer.getDat_Printer().println(pNet.getListP()[17+4*j].getName()+"\n");
            }
       
     }
@@ -148,7 +148,7 @@ public class UserSim extends PetriSim {
 
      public void printInfo()
      {
-     Dat_Printer.println(this.getName()+"\n"+
+     Dat_Printer.getDat_Printer().println(this.getName()+"\n"+
                    "кількість відмов через відсутність місця в буфері = "+pNet.getListP()[14].getMark()+"\n"+
                    "обсяг невдоволеної потреби в ОР = "+pNet.getListP()[15].getMark()+"\n"
                    );

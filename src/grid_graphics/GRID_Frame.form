@@ -13,6 +13,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Built-In Sample"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -93,6 +96,14 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Component class="javax.swing.JEditorPane" name="jEditorPane1">
+                  <Properties>
+                    <Property name="editorKit" type="javax.swing.text.EditorKit" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new HTMLEditorKit()" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//Let&apos;s make it as an output device for Dat_Printer&#xd;&#xa;Dat_Printer.getDat_Printer().My_jEditorPane1 = jEditorPane1;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>

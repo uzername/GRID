@@ -52,7 +52,7 @@ public class TaskSim extends PetriSim{
 
      public void printInfo()
      {
-     Dat_Printer.println("кількість виконаних завдань = "+pNet.getListP()[9].getMark()+"\n"+
+     Dat_Printer.getDat_Printer().println("кількість виконаних завдань = "+pNet.getListP()[9].getMark()+"\n"+
                    "кількість завдань, що отримали відмову = "+pNet.getListP()[10].getMark()+"\n"+
                    "кількість фактично використаного ресурсу = "+pNet.getListP()[11].getMark()+"\n"+
                    "кількість ОР, що не вистачає = "+pNet.getListP()[12].getMark()+

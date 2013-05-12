@@ -4,6 +4,10 @@
  */
 package grid_graphics;
 
+import grid_servithors.Dat_Printer;
+import javax.swing.JEditorPane;
+import javax.swing.text.html.HTMLEditorKit;
+
 /**
  *
  * @author Ivan
@@ -48,6 +52,9 @@ public class GRID_Frame extends javax.swing.JFrame {
         jSplitPane1.setPreferredSize(new java.awt.Dimension(400, 279));
         jSplitPane1.setTopComponent(jScrollPane1);
 
+        jEditorPane1.setEditorKit(new HTMLEditorKit());
+        //Let's make it as an output device for Dat_Printer
+        Dat_Printer.getDat_Printer().My_jEditorPane1 = jEditorPane1;
         jScrollPane2.setViewportView(jEditorPane1);
 
         jSplitPane1.setRightComponent(jScrollPane2);
@@ -59,6 +66,11 @@ public class GRID_Frame extends javax.swing.JFrame {
         jMenu1.setText("File");
 
         jMenuItem1.setText("Built-In Sample");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -70,6 +82,11 @@ public class GRID_Frame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        Dat_Printer.getDat_Printer().graphic_println("====DDDTTT====");
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,4 +133,7 @@ public class GRID_Frame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
+    public JEditorPane getJEditorPane1_zPotrokhamee() {
+        return jEditorPane1;
+    }
 }

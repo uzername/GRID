@@ -6,6 +6,7 @@ import javax.swing.JEditorPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLEditorKit;
 
+
 /**
  * @author Ivan
  * Provides output service/interface for GRID model simulation.
@@ -15,9 +16,19 @@ import javax.swing.text.html.HTMLEditorKit;
  */
 public class Dat_Printer {
     
-    public JEditorPane My_jEditorPane1;
+    private static Dat_Printer instance; //feel the singleton
+    public static JEditorPane My_jEditorPane1; //let it be public!
     
-    /*public static void SmartAddTextToEditorPane (String text) {
+    
+    public static synchronized Dat_Printer getDat_Printer() {
+        if (instance == null) {
+            instance = new Dat_Printer();
+        }
+        return instance;
+    }
+    
+    public static void SmartAddTextToEditorPane (String text) {
+        //JEditorPane My_jEditorPane1
         HTMLEditorKit editor = (HTMLEditorKit)( My_jEditorPane1.getEditorKit());
         StringReader reader = new StringReader(text);
         try {
@@ -31,12 +42,12 @@ public class Dat_Printer {
           // I/O error
             ex.printStackTrace();
         }
-    }*/
+    }
     
-    public static void println(String Line2Print ) {
+    public void println(String Line2Print ) {
         System.out.println(Line2Print);
     }
-    /*public static void println(String Line2Print ) {
+    public void graphic_println(String Line2Print ) {
         SmartAddTextToEditorPane(Line2Print);
-    }*/
+    }
 }
