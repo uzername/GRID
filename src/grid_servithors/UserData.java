@@ -11,4 +11,5 @@ package grid_servithors;
 class UserData {
     public String userName;
     public Integer abstractMIPS;
+    public Integer abstractBuffer; //used in NetLibrary.CreateUser
 }

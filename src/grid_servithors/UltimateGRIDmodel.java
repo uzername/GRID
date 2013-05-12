@@ -30,6 +30,7 @@ public class UltimateGRIDmodel {
         //формування (поч. ініціалізація) списку імітаційних обєктів
         ListObj = new ArrayList<PetriSim>(); 
         ListUser = new ArrayList<UserSim>();
+        AllTasks = new ArrayList<ArrayList<TaskSim>>();
     }
     
     public void DefineTasksAndUsers(ArrayList<ArrayList<TaskData>> inpTasks, 
@@ -38,6 +39,17 @@ public class UltimateGRIDmodel {
             throw new Exception("Tasks Length!=Users Length!");
         }
         
-        
+        for (int i=0; i<inpUsers.size(); i++) {
+            ArrayList<TaskSim> OneUserTasks = new ArrayList<TaskSim>();
+            for (TaskData OneTask: inpTasks.get(i)) {
+                TaskSim Task = new TaskSim(NetLibrary.CreateNetTask(OneTask.timeServ,TimeModelling),
+                                           TimeModelling); 
+                Task.setName(OneTask.TaskDescr);
+                OneUserTasks.add(Task);
+            }
+            AllTasks.add(OneUserTasks);
+            UserSim UserA= new UserSim(OneUserTasks, NetLibrary.CreateNetUser(inpUsers.get(i).abstractBuffer, TimeModelling), TimeModelling);
+            ListUser.add(UserA);
+        }
     }
 }
